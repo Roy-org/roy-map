@@ -1,5 +1,20 @@
 //app.js
+const config = require('./utils/config.js');
+// 引入SDK核心类
+const aMapWx = require('./libs/amap-wx.js');
+const QQMapWX = require('./libs/qqmap-wx-jssdk.js');
+
+const qqKey = config.Config.qqKey;
+const aKey = config.Config.aKey;
+// 实例化API核心类
+const qqMap = new QQMapWX({ key: qqKey });
+const aMap = new aMapWx.AMapWX({ key: aKey });
+
+const heWeather = require('./utils/heWeather.js')
 App({
+  aMap: aMap,
+  qqMap: qqMap,
+  heWeather: heWeather,
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

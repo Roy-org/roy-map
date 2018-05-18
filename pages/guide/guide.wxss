@@ -16,6 +16,8 @@ input {
   background: #FFF;
   height: 30px;
   border-radius: 2px;
+  font-size: 14px;
+  padding: 0 5px;
 }
 .exchange-btn {
   margin-left: 10px;

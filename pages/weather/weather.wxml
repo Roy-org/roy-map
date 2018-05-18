@@ -1,0 +1,22 @@
+<!--pages/weather/weather.wxml-->
+<view class="weather-container">
+  <view class="weather-list">
+    <view class="weather-item" wx:for="{{weathers}}" wx:key="{{index}}">
+      <view class="weather-desc">
+        <view class="weather">{{item.cond_txt_d}}</view>
+        <view class="date">{{item.date}}</view>
+        <view class="location">{{basic.location}}/{{basic.parent_city}}</view>
+      </view>
+      <view class="weather_icon">
+        <image src="{{item.icon}}"></image>
+        <view class="tmp">{{item.tmp_min}}℃~{{item.tmp_max}}℃</view>
+      </view>
+    </view>
+  </view>
+  <view class="life-style">
+    <view class="life-style-item" wx:for="{{lifeStyles}}" wx:key="{{index}}">
+      <text> -- {{item.title}}: </text>
+      <text>{{item.txt}}</text>
+    </view>
+  </view>
+</view>

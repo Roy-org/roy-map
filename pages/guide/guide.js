@@ -1,16 +1,5 @@
 // pages/guide/guide.js
-
-// 引入SDK核心类
-let amapFile = require('../../libs/amap-wx.js');
-let QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
-let config = require('../../utils/config.js');
-
-let qqKey = config.Config.qqKey;
-let aKey = config.Config.aKey;
-// 实例化API核心类
-let qqMapWX = new QQMapWX({ key: qqKey });
-let amapFun = new amapFile.AMapWX({ key: aKey });
-
+const app = getApp()
 Page({
   data: {
     ampFunc: null,
@@ -45,7 +34,7 @@ Page({
 
     wx.getLocation({
       success: res => {
-        qqMapWX.reverseGeocoder({
+        app.qqMap.reverseGeocoder({
           location: {
             latitude: res.latitude,
             longitude: res.longitude
@@ -84,7 +73,7 @@ Page({
 
   do (route) {
     let routeType = route || 'getDrivingRoute'
-    amapFun[routeType]({
+    app.aMap[routeType]({
       origin: this.data.origin,
       destination: this.data.destination,
       success: data => {

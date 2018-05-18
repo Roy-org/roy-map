@@ -2,6 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/guide/guide",
+    "pages/weather/weather",
     "pages/logs/logs"
   ],
   "window":{
@@ -19,6 +20,10 @@
       {
         "pagePath": "pages/guide/guide",
         "text": "路线"
+      },
+      {
+        "pagePath": "pages/weather/weather",
+        "text": "天气"
       }
     ]
   }
