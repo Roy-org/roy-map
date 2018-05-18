@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+  <map id="myMap" longitude="{{locationInfo.longitude}}" latitude="{{locationInfo.latitude}}" scale="18" show-location>
+    <cover-view class="my-location" bindtap="move">
+      <cover-view class="inner"></cover-view>
+    </cover-view>
+  </map>
+</view>

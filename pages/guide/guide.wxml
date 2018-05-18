@@ -1,0 +1,22 @@
+<view class="input-box">
+  <view class="input-box-inner">
+    <input placeholder="起点" value="{{lStart.name}}" bindtap="chooseLocation" data-ltype="lStart"></input>
+    <input placeholder="终点" value="{{lEnd.name}}" bindtap="chooseLocation" data-ltype="lEnd"></input>
+  </view>
+  <button class="exchange-btn" bindtap="exchangeLocation">切换</button>
+</view>
+<view class="trip-type">
+  <view class="trip-item" bindtouchstart="goToCar">驾车</view>
+  <view class="trip-item" bindtouchstart="goToWalk">步行</view>
+  <!-- <view class="trip-item" bindtouchstart="goToBus">公交</view> -->
+  <view class="trip-item" bindtouchstart="goToRide">骑行</view>
+</view>
+<view class="content-box">
+  <view class="map_box">
+    <map id="navi_map" longitude="{{lStart.longitude}}" latitude="{{lStart.latitude}}" include-points="{{includePoints}}" scale="{{scale}}" markers="{{markers}}" polyline="{{polyline}}" show-location></map>
+  </view>
+  <!-- <view class="text_box" wx:if="{{isShowMsg}}">
+    <view class="text">{{distance}}</view>
+    <view class="text">{{cost}}</view>
+  </view> -->
+</view>
